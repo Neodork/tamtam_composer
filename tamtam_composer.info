@@ -1,0 +1,8 @@
+;$Id$
+name = Tam Tam Composer
+description = Module for setting the library path of the Composer Manager module.
+package = TamTam
+core = 7.x
+files[] = tamtam_composer.module
+dependencies[] = composer_manager
+;php = 5.2

@@ -1,0 +1,19 @@
+<?php
+// $Id$
+/**
+ * @file
+ * A module for setting the library path of the Composer Manager module.
+ *
+ * This module provides a workaround that sets the default
+ * library of the module 'Composer Manager' to the kraftwagen
+ * profiles map. E.g: public_html/profiles/<profilename>/vendor
+ */
+/**
+ * Implements hook_enable().
+ */
+function tamtam_composer_enable()
+{
+    module_enable(array('composer_manager'));
+    $profile_path = 'profiles/' . drupal_get_profile() . '/libraries/composer';
+    variable_set('composer_manager_vendor_dir', $profile_path);
+}
